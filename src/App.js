@@ -20,7 +20,7 @@ export default function App() {
 
      const getData = ()=>{ 
       setLoading(true)
-      axios.get(`https://json-server-mocker-masai.herokuapp.com/candidates?_page=${page}&_limit=6`).then((data)=>{
+      axios.get(`https://json-server-mocker-masai.herokuapp.com/candidates?_page=${page}&_limit=5`).then((data)=>{
         return setData(data.data)
       }).catch((err)=>{
         console.log(err)
@@ -32,19 +32,8 @@ export default function App() {
     setPage((PREV)=>PREV + value)
   }   
 
-//   const myfun= (asd)=>{
-//     console.log(asd);
-//      getdata.sort((a,b)=>{
-//          if(a.name>b.name) return asd ?1 : -1
-//           else 
-//            return !asd ?1 : -1
-           
-//      })
-//      setGetdata([... getdata])
-    
-//  }
-
-    const myFun = (value)=>{ 
+  
+  const myFun = (value)=>{ 
       console.log(value);
       data.sort((a,b)=>{
           if(a.salary>b.salary) return value ?1 : -1
